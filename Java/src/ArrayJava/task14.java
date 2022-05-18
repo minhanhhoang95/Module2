@@ -1,40 +1,26 @@
 package ArrayJava;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class task14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int size;
-        int count = 0;
-        // check size
-        do {
-            size = sc.nextInt();
-            if (size > 3) {
-                System.out.println("Size should not exceed 30");
-            }
-        } while (size > 3);
-        // input arrs
-        int arr[] = new int[size];
-        int i = 0;
-        while (i < arr.length) {
-
-
-
-            System.out.println("Enter a mark for student " + (i + 1) + ": ");
-            arr[i] = sc.nextInt();
-            i++;
+        String str = "Hoang Anh Minh".toLowerCase();
+        System.out.println("Nhập chữ cần tìm : ");
+        String input = sc.nextLine().toLowerCase();
+        char ch = input.charAt(0);
+        int count=0 ;
+        if(input.length()!=1){
+            System.out.println("số này quá dài : ");
+            return;
         }
-        int show = countElement(arr, count);
-        System.out.println("Number of student who passed : " + show);
-    }
-    public static int countElement(int arr[],int count) {
-        count = 0;
-        for(int i = 0; i < arr.length; i++) {
-            if (arr[i] >= 5 && arr[i] <= 10) {
+        for (int i=0;i<str.length();i++){
+            if(str.charAt(i)==ch){
+//                System.out.println(i);
                 count++;
             }
         }
-        return count;
+        System.out.println("xuat hien " + count + " lan ");
     }
 }
