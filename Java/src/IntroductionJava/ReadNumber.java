@@ -7,59 +7,69 @@ public class ReadNumber {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number convert : ");
         int number = sc.nextInt();
-        int first = number / 100;
-        int second = (number % 100) / 10;
-        int third = number % 10;
-        String result = null;
-        if (number < 0 && number > 999) {
-            System.out.println("Out of range.");
-        }
-        if (number >= 0 && number < 10) {
-            result = _0_to_9_(number);
-            System.out.println(result);
-            return;
-        }
-        if (number >= 10 && number < 20) {
-            result = _10_to_19_(third);
-            System.out.println(result);
-            return;
-        }
-        if (number >= 20 && number < 100) {
-            if (third != 0) {
-                result = _20_to_99_(second) + " " + _0_to_9_(third);
-                System.out.println(result);
-            } else {
-                result = _20_to_99_(second);
-                System.out.println(result);
-            }
+        while (number != -1) {
 
-            return;
-        }
-        if (number >= 100 && number < 1000) {
-            if (third == 0) {
-                if (second == 0) {
-                    result = _100_to_999_(first);
+            int first = number / 100;
+            int second = (number % 100) / 10;
+            int third = number % 10;
+            String result = null;
+
+            if (number < 0 || number > 999) {
+                System.out.println("Out of range.");
+                System.exit(-1);
+            }
+            if (number >= 0 && number < 10) {
+                result = _0_to_9_(number);
+                System.out.println(result);
+                number = sc.nextInt();
+            }
+            if (number >= 10 && number < 20) {
+                result = _10_to_19_(third);
+                System.out.println(result);
+                number = sc.nextInt();
+            }
+            if (number >= 20 && number < 100) {
+                if (third != 0) {
+                    result = _20_to_99_(second) + " " + _0_to_9_(third);
                     System.out.println(result);
+                    number = sc.nextInt();
+                } else {
+                    result = _20_to_99_(second);
+                    System.out.println(result);
+                    number = sc.nextInt();
                 }
-                if (second < 2 && second > 0) {
+
+            }
+            if (number >= 100 && number < 1000) {
+                if (third == 0) {
+                    if (second == 0) {
+                        result = _100_to_999_(first);
+                        System.out.println(result);
+                        number = sc.nextInt();
+                    }
+                    if (second < 2 && second > 0) {
+                        result = _100_to_999_(first) + " and " + _10_to_19_(third);
+                        System.out.println(result);
+                        number = sc.nextInt();
+                    } else if (second >= 2) {
+                        result = _100_to_999_(first) + " and " + _20_to_99_(second);
+                        System.out.println(result);
+                        number = sc.nextInt();
+                    }
+                } else if (second == 0) {
+                    result = _100_to_999_(first) + " and " + _0_to_9_(third);
+                    System.out.println(result);
+                    number = sc.nextInt();
+                } else if (second < 2) {
                     result = _100_to_999_(first) + " and " + _10_to_19_(third);
                     System.out.println(result);
-                } else if (second >= 2) {
-                    result = _100_to_999_(first) + " and " + _20_to_99_(second);
+                    number = sc.nextInt();
+                } else {
+                    result = _100_to_999_(first) + " and " + _20_to_99_(second) + " and " + _0_to_9_(third);
                     System.out.println(result);
+                    number = sc.nextInt();
                 }
-            } else if (second == 0) {
-                result = _100_to_999_(first) + " and " + _0_to_9_(third);
-                System.out.println(result);
-                return;
-            } else if (second < 2) {
-                result = _100_to_999_(first) + " and " + _10_to_19_(third);
-                System.out.println(result);
-            } else {
-                result = _100_to_999_(first) + " and " + _20_to_99_(second) + " and " + _0_to_9_(third);
-                System.out.println(result);
             }
-            return;
         }
     }
 
@@ -120,7 +130,7 @@ public class ReadNumber {
                 special = "fourteen";
                 break;
             case 5:
-                special = "fiveteen";
+                special = "fifteen";
                 break;
             case 6:
                 special = "sixteen";
@@ -148,10 +158,10 @@ public class ReadNumber {
                 second = "thirty";
                 break;
             case 4:
-                second = "fourty";
+                second = "forty";
                 break;
             case 5:
-                second = "fivety";
+                second = "fifty";
                 break;
             case 6:
                 second = "sixty";

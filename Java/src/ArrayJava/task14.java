@@ -18,6 +18,9 @@ public class task14 {
         int arr[] = new int[size];
         int i = 0;
         while (i < arr.length) {
+
+
+
             System.out.println("Enter a mark for student " + (i + 1) + ": ");
             arr[i] = sc.nextInt();
             i++;
