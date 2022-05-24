@@ -12,7 +12,7 @@ public class ReadNumber {
             int first = number / 100;
             int second = (number % 100) / 10;
             int third = number % 10;
-            String result = null;
+            String result = null;//sai null cần in trực tiếp
 
             if (number < 0 || number > 999) {
                 System.out.println("Out of range.");
@@ -29,46 +29,50 @@ public class ReadNumber {
                 number = sc.nextInt();
             }
             if (number >= 20 && number < 100) {
-                if (third != 0) {
-                    result = _20_to_99_(second) + " " + _0_to_9_(third);
-                    System.out.println(result);
-                    number = sc.nextInt();
-                } else {
+                if (third == 0) {
                     result = _20_to_99_(second);
                     System.out.println(result);
                     number = sc.nextInt();
+                } else {
+                    result = _20_to_99_(second) + " " + _0_to_9_(third);
+                    System.out.println(result);
+                    number = sc.nextInt();
                 }
+//                System.out.println(result);
+//                number = sc.nextInt();
 
             }
             if (number >= 100 && number < 1000) {
                 if (third == 0) {
                     if (second == 0) {
                         result = _100_to_999_(first);
-                        System.out.println(result);
-                        number = sc.nextInt();
+//                        System.out.println(result);
+//                        number = sc.nextInt();
                     }
                     if (second < 2 && second > 0) {
                         result = _100_to_999_(first) + " and " + _10_to_19_(third);
-                        System.out.println(result);
-                        number = sc.nextInt();
+//                        System.out.println(result);
+//                        number = sc.nextInt();
                     } else if (second >= 2) {
                         result = _100_to_999_(first) + " and " + _20_to_99_(second);
-                        System.out.println(result);
-                        number = sc.nextInt();
+//                        System.out.println(result);
+//                        number = sc.nextInt();
                     }
                 } else if (second == 0) {
                     result = _100_to_999_(first) + " and " + _0_to_9_(third);
-                    System.out.println(result);
-                    number = sc.nextInt();
+//                    System.out.println(result);
+//                    number = sc.nextInt();
                 } else if (second < 2) {
                     result = _100_to_999_(first) + " and " + _10_to_19_(third);
-                    System.out.println(result);
-                    number = sc.nextInt();
+//                    System.out.println(result);
+//                    number = sc.nextInt();
                 } else {
                     result = _100_to_999_(first) + " and " + _20_to_99_(second) + " and " + _0_to_9_(third);
-                    System.out.println(result);
-                    number = sc.nextInt();
+//                    System.out.println(result);
+//                    number = sc.nextInt();
                 }
+                System.out.println(result);
+                number = sc.nextInt();
             }
         }
     }
