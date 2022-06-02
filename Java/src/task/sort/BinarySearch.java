@@ -1,4 +1,4 @@
-package task;
+package task.sort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
