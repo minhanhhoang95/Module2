@@ -11,6 +11,7 @@ public class MyListTest {
         System.out.println("elememt 4 : "+ listInteger.get(4));
         System.out.println("elememt 1 : "+ listInteger.get(1));
         System.out.println("elememt 2 : "+ listInteger.get(2));
+        System.out.println(listInteger);
 //        listInteger.get(6);
 //        System.out.println("elememt 6 : "+ listInteger.get(6));
 
