@@ -13,5 +13,6 @@ public class Main {
         for(Student student: arr){
             System.out.println(student);
         }
+
     }
 }
