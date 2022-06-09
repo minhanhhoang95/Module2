@@ -198,8 +198,8 @@ public class ProductManager {
         if (productList.isEmpty()) {
             System.out.println("There are no products in the list !");
         } else {
-            PriceDscComparator priceDereaseComparator = new PriceDscComparator();
-            Collections.sort(productList, priceDereaseComparator);
+            PriceDscComparator priceDscComparator = new PriceDscComparator();
+            Collections.sort(productList, priceDscComparator);
             int i = 1;
             for (Product product : productList) {
                 System.out.println(i + ". " + product.toString());

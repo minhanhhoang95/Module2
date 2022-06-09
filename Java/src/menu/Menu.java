@@ -77,9 +77,9 @@ public class Menu {
     public void menuAdmin2() {
         System.out.println("*************MENU******************");
         System.out.println("                                   ");
-        System.out.println("***      1. Thêm hàng           ***");
-        System.out.println("***      2. Sửa hàng            ***");
-        System.out.println("***      3. Xóa hàng            ***");
+        System.out.println("***      1. Thêm sp           ***");
+        System.out.println("***      2. Sửa sp            ***");
+        System.out.println("***      3. Xóa sp            ***");
         System.out.println("***      4. Quay lại            ***");
         System.out.println("***      0. Exit                ***");
         System.out.println("                                   ");

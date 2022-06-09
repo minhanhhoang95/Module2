@@ -1,17 +1,23 @@
-package task;
+package task.product_manager.model;
 
 
 public class Product {
     private long id;
-    private String nameProducts;
+    private String title;
     private double price;
 
     public Product(){
 
     }
-    public Product(long id, String nameProducts, double price) {
+
+    public Product(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    public Product(long id, String title, double price) {
         this.id = id;
-        this.nameProducts = nameProducts;
+        this.title = title;
         this.price = price;
     }
 
@@ -19,16 +25,16 @@ public class Product {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getNameProducts() {
-        return nameProducts;
+    public String getTitle() {
+        return title;
     }
 
-    public void  setNameProducts(String nameProducts) {
-        this.nameProducts = nameProducts;
+    public void setTitle(String nameProducts) {
+        this.title = title;
     }
 
     public double getPrice() {
@@ -43,7 +49,7 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "id=" + id +
-                ", nameProducts='" + nameProducts + '\'' +
+                ", nameProducts='" + title + '\'' +
                 ", price=" + price +
                 '}';
     }

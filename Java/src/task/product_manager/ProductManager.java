@@ -1,4 +1,6 @@
-package task;
+package task.product_manager;
+
+import task.product_manager.model.Product;
 
 import java.util.*;
 
@@ -38,7 +40,7 @@ public class ProductManager {
 
     public void searchName(String name) {
         for (Product value : products) {
-            if (value.getNameProducts().toLowerCase().contains(name.toLowerCase())) {
+            if (value.getTitle().toLowerCase().contains(name.toLowerCase())) {
                 System.out.println(value);
             }
         }
@@ -70,8 +72,8 @@ public class ProductManager {
         Comparator<Product> comparator = new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                String a = o1.getNameProducts();
-                String b = o2.getNameProducts();
+                String a = o1.getTitle();
+                String b = o2.getTitle();
                 int c = a.compareTo(b);
                 if (c > 0) {
                     return 1;
@@ -102,7 +104,7 @@ public class ProductManager {
     public void replaceName(int id, String name) {
         for (Product value : products) {
             if (value.getId() == id) {
-                value.setNameProducts(name);
+                value.setTitle(name);
             }
         }
     }
@@ -118,7 +120,7 @@ public class ProductManager {
     public void replaceAll(int id, String name, double price) {
         for (Product value : products) {
             if (value.getId() == id) {
-                value.setNameProducts(name);
+                value.setTitle(name);
                 value.setPrice(price);
             }
         }
