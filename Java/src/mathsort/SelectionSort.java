@@ -1,4 +1,4 @@
-package task.sort;
+package mathsort;
 
 import java.util.Arrays;
 
